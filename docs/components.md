@@ -17,7 +17,7 @@ graph TD
   end
 
   subgraph Core
-      Ledger[CoreLedger]
+      Ledger[Core]
       AccountManagement[Account Management]
       TransactionProcessing[Transaction Processing]
       PaymentGateway[Payment Gateway]
@@ -38,11 +38,7 @@ graph TD
       APIs[APIs for Third-Party Services]
   end
 
-  WebApp --> APIGateway
-  MobileApp --> APIGateway
-
-  APIGateway --> WebApp
-  APIGateway --> MobileApp
+  Client --> APIGateway
 
   APIGateway --> Core
 
@@ -52,4 +48,6 @@ graph TD
 
   APIGateway --> ExternalServices
   APIGateway --> APIs
+
+  APIGateway --> Client
 ```
