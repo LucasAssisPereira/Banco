@@ -38,7 +38,7 @@ graph TD
       APIs[APIs for Third-Party Services]
   end
 
-  WebApp --> Gateway
+  WebApp --> APIGateway
   MobileApp --> APIGateway
 
   APIGateway --> Legder
