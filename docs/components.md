@@ -10,7 +10,7 @@ O **Core** é o coração da arquitetura, responsável pelo processamento de tod
   - **Compliance and Reporting**: Conjunto de ferramentas e processos que garantem a conformidade com regulamentações financeiras. Gera relatórios financeiros detalhados para fins internos e regulatórios, além de garantir que todas as operações estejam em conformidade com as leis e normas aplicáveis.
 
 ```mermaid
-graph TD
+    graph TD
   subgraph Client
       WebApp[Web Bank]
       MobileApp[Mobile Bank]
@@ -25,8 +25,8 @@ graph TD
   end
 
   subgraph Middleware
-      APIGateway[APIGateway]
-      Microservices[MicroServices]
+      APIGateway[API Gateway]
+      Microservices[Microservices]
   end
 
   subgraph Database
@@ -38,16 +38,17 @@ graph TD
       APIs[APIs for Third-Party Services]
   end
 
-  Client --> APIGateway
+  WebApp --> APIGateway
+  MobileApp --> APIGateway
 
   APIGateway --> Core
-
-  Core --> Microservices  
-
-  Microservices --> Postgres
-
   APIGateway --> ExternalServices
   APIGateway --> APIs
 
-  APIGateway --> Client
+  Core --> Microservices
+  Microservices --> Postgres
+  Microservices --> PaymentGateway
+  Microservices --> AccountManagement
+  Microservices --> TransactionProcessing
+  Microservices --> ComplianceReporting
 ```
