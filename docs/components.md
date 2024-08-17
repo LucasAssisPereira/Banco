@@ -51,5 +51,5 @@ graph TD
   Microservices --> Postgres
 
   APIGateway --> ExternalServices
-  APIGateway --> API's
+  APIGateway --> APIs
 ```
