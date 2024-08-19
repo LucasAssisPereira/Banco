@@ -42,11 +42,10 @@ O **Core** é o coração da arquitetura, responsável pelo processamento de tod
   MobileApp --> APIGateway
 
   APIGateway --> Core
-  APIGateway --> ExternalServices
-  APIGateway --> APIs
-
+  APIGateway --> Integration
+  
   Core --> Microservices
-  Microservices --> Postgres
+  Microservices --> Database
   Microservices --> PaymentGateway
   Microservices --> AccountManagement
   Microservices --> TransactionProcessing
