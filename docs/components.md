@@ -12,8 +12,8 @@ O **Core** é o coração da arquitetura, responsável pelo processamento de tod
 ```mermaid
     graph TD
   subgraph Client
-      WebApp[Web Bank]
-      MobileApp[Mobile Bank]
+      WebApp[Web App]
+      MobileApp[Mobile App]
   end
 
   subgraph Core
